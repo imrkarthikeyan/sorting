@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
+public class InsertionSort{
+	public static void insertionSort(List<Integer> lst){
+		for(int x=1;x<lst.size();x++){
+			int  val=lst.get(x), y=x-1;
+			while(0<=y && val<lst.get(y)){
+				lst.set(y+1,lst.get(y));
+				y-=1;
+			}
+			lst.set(y+1,val);
+		}
+	}
+	public static void main(String[] args) {
+		List<Integer> lst=new ArrayList<>();
+		lst.add(2);
+		lst.add(6);
+		lst.add(9);
+		lst.add(4);
+		lst.add(3);
+		lst.add(5);
+		insertionSort(lst);
+		System.out.println("Sorted List:"+lst);
+	}
+}
